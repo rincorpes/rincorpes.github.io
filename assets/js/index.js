@@ -1,7 +1,10 @@
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Paradox from "@rincorpes/paradoxjs";
+
 // === BACKGROUND NETWORK CANVAS ========================================
 
 const canvas = document.getElementById("bg-canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas?.getContext("2d");
 
 let width = 0;
 let height = 0;
@@ -12,6 +15,10 @@ const MAX_DISTANCE = 220;
 const nodes = [];
 
 function resizeCanvas() {
+  if (!canvas) {
+    return;
+  }
+
   scale = window.devicePixelRatio || 1;
   width = window.innerWidth * scale;
   height = window.innerHeight * scale;
@@ -56,6 +63,10 @@ function updateNodes() {
 }
 
 function renderNetwork() {
+  if (!ctx) {
+    return;
+  }
+
   ctx.clearRect(0, 0, width, height);
 
   // Draw connections
@@ -128,11 +139,11 @@ function setupYear() {
 // === SYSTEM MONITOR =====================================================
 
 function setupWatcher() {
-  const pet = document.querySelector(".watcher");
+  const watcher = document.querySelector(".watcher");
   const labelEl = document.getElementById("watcher-label");
   const tooltipEl = document.getElementById("watcher-tooltip");
 
-  if (!pet || !labelEl || !tooltipEl) return;
+  if (!watcher || !labelEl || !tooltipEl) return;
 
   const states = [
     {
@@ -161,9 +172,13 @@ function setupWatcher() {
     tooltipEl.textContent = state.hint;
   }
 
-  pet.addEventListener("click", () => {
-    stateIndex = (stateIndex + 1) % states.length;
-    applyState();
+  Paradox.delegate(document, {
+    click: {
+      ".watcher": () => {
+        stateIndex = (stateIndex + 1) % states.length;
+        applyState();
+      },
+    },
   });
 
   applyState();
@@ -174,8 +189,11 @@ function setupWatcher() {
 window.addEventListener("resize", resizeCanvas);
 
 window.addEventListener("load", () => {
-  resizeCanvas();
-  animate();
+  if (canvas && ctx) {
+    resizeCanvas();
+    animate();
+  }
+
   setupEmailLinks();
   setupYear();
   setupWatcher();

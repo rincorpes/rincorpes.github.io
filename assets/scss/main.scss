@@ -1,0 +1,22 @@
+$primary: #7c5cff;
+$secondary: #6aa9ff;
+$dark: #14161a;
+$light: #f5f2eb;
+$body-bg: #0a0a0b;
+$body-color: #f5f2eb;
+$font-family-sans-serif: "Inter", sans-serif;
+$font-family-monospace: "JetBrains Mono", monospace;
+$navbar-dark-color: rgba(140, 150, 163, 0.92);
+$navbar-dark-hover-color: #f5f2eb;
+$navbar-dark-active-color: #f5f2eb;
+$border-radius: 1rem;
+$border-radius-lg: 1.2rem;
+$card-border-radius: 1.2rem;
+$btn-border-radius: 999px;
+$btn-padding-x: 1.1rem;
+$btn-padding-y: 0.75rem;
+
+@import "bootstrap/scss/bootstrap";
+
+// Keep the existing site styling intact while moving the pipeline to Sass.
+@import "../css/style.css";

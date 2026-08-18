@@ -1,0 +1,19 @@
+{
+  "name": "rincorpes-github-io",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host localhost --port 4173",
+    "build": "vite build",
+    "preview": "vite preview --host localhost --port 4173"
+  },
+  "dependencies": {
+    "@rincorpes/paradoxjs": "file:../../packages/javascript/paradoxjs",
+    "bootstrap": "5.3.8"
+  },
+  "devDependencies": {
+    "sass": "1.102.0",
+    "vite": "8.2.0"
+  }
+}
