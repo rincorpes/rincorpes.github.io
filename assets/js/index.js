@@ -1,7 +1,25 @@
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Paradox from "@rincorpes/paradoxjs";
+import * as ParadoxModule from "@rincorpes/paradoxjs";
 
-const EMAIL_ADDRESS = "hello@rincorpes.dev";
+function resolveParadox(moduleValue) {
+  if (moduleValue?.buildElement) {
+    return moduleValue;
+  }
+
+  if (moduleValue?.default?.buildElement) {
+    return moduleValue.default;
+  }
+
+  if (moduleValue?.default?.default?.buildElement) {
+    return moduleValue.default.default;
+  }
+
+  throw new Error("Unable to resolve ParadoxJS public API");
+}
+
+const Paradox = resolveParadox(ParadoxModule);
+
+const EMAIL_ADDRESS = "rincorpes@gmail.com";
 
 const selectedWork = [
   {
