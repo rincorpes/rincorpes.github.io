@@ -6,17 +6,18 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Santiago Rincón | Senior Software Engineer</title>
+    <title>Santiago Rincón | Systems Engineer</title>
+    <meta
+      name="description"
+      content="Santiago Rincón builds the systems behind other systems: AI platforms, developer tools, backend systems, and creative technology."
+    />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -24,808 +25,145 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <link rel="stylesheet" href="/assets/scss/main.scss" />
-
   </head>
-
-  <body class="bg-black text-light">
-    <canvas id="bg-canvas" class="bg-canvas"></canvas>
-
-    <div class="page-wrapper d-flex flex-column min-vh-100">
-      <header class="sticky-top header-blur border-bottom border-dark">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-          <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
-              <span class="brand-mark"></span>
-              <span class="brand-text">
-                <span class="brand-name">Santiago Rincón</span>
-                <span class="brand-subtitle d-none d-sm-block">
-                  AI tools · workflow systems · internal platforms
-                </span>
-              </span>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container-xxl">
+          <nav class="navbar navbar-expand-lg navbar-dark site-nav" aria-label="Primary">
+            <a class="navbar-brand brand-lockup" href="#top">
+              <span class="brand-glyph" aria-hidden="true">//</span>
+              <span class="brand-wordmark">RINCORPES</span>
             </a>
 
             <button
-              class="navbar-toggler"
+              class="navbar-toggler border-0 shadow-none"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navbarContent"
-              aria-controls="navbarContent"
+              data-bs-target="#site-nav-menu"
+              aria-controls="site-nav-menu"
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div
-              class="collapse navbar-collapse justify-content-end"
-              id="navbarContent"
-            >
-              <ul class="navbar-nav me-3 gap-lg-2 text-uppercase small">
-                <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#skills">Skills</a>
-                </li>
+            <div class="collapse navbar-collapse" id="site-nav-menu">
+              <ul class="navbar-nav mx-auto nav-links">
                 <li class="nav-item">
                   <a class="nav-link" href="#work">Work</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#notes">Notes</a>
+                  <a class="nav-link" href="#experience">Experience</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#stack">Stack</a>
+                  <a class="nav-link" href="#systems">Systems</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#contact">Contact</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
               </ul>
 
-              <ul class="navbar-nav social-links flex-row gap-2">
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    title="email"
-                    href=""
-                    data-contact="email"
-                  >
-                    <i class="fas fa-envelope"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    title="github"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/alexsc6955"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    title="linkedin"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://linkedin.com/in/alexsc6955"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    title="npm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.npmjs.com/~rincorpes"
-                  >
-                    <i class="fab fa-npm"></i>
-                  </a>
-                </li>
-              </ul>
+              <div class="nav-meta">
+                <a
+                  class="nav-meta-link"
+                  href="https://github.com/rincorpes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  class="nav-meta-link"
+                  href="https://linkedin.com/in/alexsc6955"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <span class="status-pill" aria-label="Availability status">
+                  <span class="status-dot"></span>
+                  Online
+                </span>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </header>
 
-      <main class="flex-grow-1">
-        <section id="hero" class="hero-section">
-          <div class="container py-5">
-            <div class="row align-items-center gy-4">
-              <div class="col-lg-7">
-                <p class="eyebrow text-accent mb-3">
-                  Senior Software Engineer · internal platforms · developer tooling · workflow systems
-                </p>
-                <h1 class="display-4 fw-bold mb-3 hero-title">
-                  I build internal platforms, developer tooling, and workflow
-                  systems that help technical teams move faster.
-                </h1>
-                <p class="lead mb-3">
-                  Senior Software Engineer with 9+ years of hands-on experience
-                  across internal tools, workflow automation, and software for
-                  creative and game development teams.
-                </p>
-                <p class="mb-4 hero-copy">
-                  My work centers on the systems behind how teams actually get
-                  work done: CLIs, APIs, internal services, CI/CD pipelines, and
-                  platform glue that turns messy workflows into reliable,
-                  repeatable operations. Lately I&apos;m leaning harder into AI
-                  engineering and pre-production tooling for creative and game
-                  teams.
-                </p>
-
-                <div class="hero-metrics row g-3 mb-4">
-                  <div class="col-sm-4">
-                    <div class="metric-card">
-                      <span class="metric-label">Hands-on</span>
-                      <strong>9+ years</strong>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="metric-card">
-                      <span class="metric-label">Professional</span>
-                      <strong>6 years</strong>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="metric-card">
-                      <span class="metric-label">Focus</span>
-                      <strong>Systems that ship</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-flex flex-wrap gap-3 mb-4">
-                  <a href="#work" class="btn btn-accent">View Projects</a>
-                  <a href="#contact" class="btn btn-outline-accent">
-                    Let&apos;s Connect
-                  </a>
-                </div>
-
-                <div class="d-flex flex-wrap gap-3 small text-muted">
-                  <span class="pill pill-soft">
-                    <i class="fa-solid fa-location-dot me-1"></i>
-                    Medellín · From Venezuela
-                  </span>
-                  <span class="pill pill-soft">
-                    <i class="fa-solid fa-terminal me-1"></i>
-                    Tools engineering
-                  </span>
-                  <span class="pill pill-soft">
-                    <i class="fa-solid fa-robot me-1"></i>
-                    AI-driven workflows
-                  </span>
-                  <span class="pill pill-soft">
-                    <i class="fa-solid fa-gamepad me-1"></i>
-                    Creative tech &amp; game tooling
-                  </span>
-                </div>
-              </div>
-
-              <div class="col-lg-5">
-                <div class="card glass-card border-0 hero-surface">
-                  <div class="card-body p-4">
-                    <p class="surface-label text-accent mb-3">Engineer context</p>
-
-                    <div class="signal-panel mb-4">
-                      <div class="signal-row">
-                        <span class="signal-key">Role</span>
-                        <span class="signal-value">Senior Software Engineer</span>
-                      </div>
-                      <div class="signal-row">
-                        <span class="signal-key">Focus</span>
-                        <span class="signal-value">Platforms &amp; tooling</span>
-                      </div>
-                      <div class="signal-row">
-                        <span class="signal-key">Background</span>
-                        <span class="signal-value">Games, VFX, creative tech</span>
-                      </div>
-                      <div class="signal-row">
-                        <span class="signal-key">Building</span>
-                        <span class="signal-value">AI + workflow systems</span>
-                      </div>
-                    </div>
-
-                    <ul class="list-unstyled mb-3">
-                      <li class="mb-3">
-                        <p class="mb-1 fw-semibold">
-                          <!-- Update years as experience grows -->
-                          9+ years of hands-on development, 6 years professional
-                        </p>
-                        <p class="mb-0 small text-muted">
-                          Deep background across internal platforms, developer
-                          tooling, and workflow automation in games, VFX, and
-                          creative tech.
-                        </p>
-                      </li>
-                      <li class="mb-3">
-                        <p class="mb-1 fw-semibold">
-                          Strongest in tools, platforms, and automation
-                        </p>
-                        <p class="mb-0 small text-muted">
-                          CLIs, APIs, internal services, CI/CD pipelines, and
-                          platform glue that keeps technical complexity from
-                          becoming operational drag.
-                        </p>
-                      </li>
-                      <li>
-                        <p class="mb-1 fw-semibold">
-                          Leaning harder into AI engineering and developer workflows
-                        </p>
-                        <p class="mb-0 small text-muted">
-                          Turning AI capabilities into durable, developer-friendly
-                          tooling that teams can actually build on and ship with.
-                        </p>
-                      </li>
-                    </ul>
-
-                    <hr class="border-dark mb-3" />
-
-                    <p class="surface-label text-muted mb-2">Where I add value</p>
-                    <div class="d-flex flex-wrap gap-2">
-                      <span class="pill pill-outline">Internal platforms</span>
-                      <span class="pill pill-outline">Developer tooling</span>
-                      <span class="pill pill-outline">AI systems</span>
-                      <span class="pill pill-outline">Game-tech workflows</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" class="section-border">
-          <div class="container py-5">
-            <div class="row gy-4 align-items-start">
-              <div class="col-lg-7">
-                <p class="section-kicker mb-2">About</p>
-                <h2 class="section-title mb-3">Product-minded engineer. Systems-first thinking.</h2>
-                <p class="text-muted mb-3">
-                  I&apos;m Santiago Rincón — a software engineer who specializes
-                  in the systems behind how technical teams work: internal
-                  platforms, developer tooling, workflow automation, and the
-                  infrastructure that lets teams ship with less friction and more
-                  confidence. My background spans games, VFX, and creative tech,
-                  but the through-line is always the same — build software that
-                  removes friction and holds up under real production use.
-                </p>
-                <p class="text-muted mb-0">
-                  I care about product-minded engineering as much as technical
-                  correctness. That means clean APIs, reliable automation,
-                  useful interfaces, and systems that the people who depend on
-                  them can actually trust and maintain. The goal is simple: give
-                  developers and creators tools that feel solid, precise, and
-                  worth reaching for every day.
-                </p>
-              </div>
-
-              <div class="col-lg-5">
-                <div class="card glass-card border-0">
-                  <div class="card-body p-4 small">
-                    <p class="surface-label text-accent mb-3">At a glance</p>
-                    <ul class="list-clean mb-0">
-                      <li>9+ years of hands-on development experience.</li>
-                      <li>6 years of professional software engineering work.</li>
-                      <li>Strongest in internal tools, platforms, and automation.</li>
-                      <li>Building deeper into AI, game tech, and creative workflows.</li>
-                      <li>Product-minded systems for developers and creators.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" class="section-border">
-          <div class="container py-5">
-            <div class="row mb-4">
-              <div class="col-lg-8">
-                <p class="section-kicker mb-2">Expertise</p>
-                <h2 class="section-title mb-3">What I build</h2>
-                <p class="text-muted mb-0">
-                  Software that turns messy workflows into repeatable systems,
-                  gives teams better leverage, and keeps technical complexity
-                  from becoming operational drag.
-                </p>
-              </div>
-            </div>
-
-            <div class="row gy-4">
-              <div class="col-md-4">
-                <div class="service-card h-100">
-                  <p class="service-icon">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                  </p>
-                  <h3 class="h5 mb-2">AI &amp; Workflow Systems</h3>
-                  <p class="small text-muted mb-3">
-                    AI-assisted tooling and workflow layers that reduce
-                    repetitive work, preserve context, and help teams move from
-                    idea to execution faster.
-                  </p>
-                  <ul class="list-clean small mb-0">
-                    <li>Workflow orchestration and automation.</li>
-                    <li>Pre-production and ideation support tools.</li>
-                    <li>Practical AI features packaged as usable systems.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="service-card h-100">
-                  <p class="service-icon">
-                    <i class="fa-solid fa-network-wired"></i>
-                  </p>
-                  <h3 class="h5 mb-2">Internal Platforms &amp; Developer Tooling</h3>
-                  <p class="small text-muted mb-3">
-                    Internal products for developers and technical teams:
-                    services, CLIs, APIs, and platform glue that make work more
-                    reliable and easier to ship.
-                  </p>
-                  <ul class="list-clean small mb-0">
-                    <li>CLIs, SDKs, and API-driven integrations.</li>
-                    <li>Environment, release, and CI/CD workflows.</li>
-                    <li>Observability, supportability, and developer speed.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <div class="service-card h-100">
-                  <p class="service-icon">
-                    <i class="fa-solid fa-gamepad"></i>
-                  </p>
-                  <h3 class="h5 mb-2">Creative Tech &amp; Game Tooling</h3>
-                  <p class="small text-muted mb-3">
-                    Technical systems for creative and game teams, from tooling
-                    around content workflows to framework-style support for
-                    small game production.
-                  </p>
-                  <ul class="list-clean small mb-0">
-                    <li>Game tools, capture flows, and production utilities.</li>
-                    <li>Creative workflow support without bloated process.</li>
-                    <li>Frameworks and tooling that make shipping easier.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="work" class="section-border">
-          <div class="container py-5">
-            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
-              <div>
-                <p class="section-kicker mb-2">Selected work</p>
-                <h2 class="section-title mb-2">Shipped systems across creative tooling, AI workflows, and platform engineering</h2>
-                <p class="text-muted mb-0">
-                  Work that shows how I think about tooling as a product
-                  surface: clean APIs, operational repeatability, and the
-                  kind of developer experience that teams actually keep using.
-                </p>
-              </div>
-              <a
-                class="small text-accent text-decoration-none"
-                href="https://github.com/alexsc6955"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View more on GitHub
-                <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-              </a>
-            </div>
-
-            <p class="small text-muted mb-4">
-              Some current R&amp;D work is still private or being packaged for
-              release, but it reflects the direction I&apos;m pushing hardest.
-            </p>
-
-            <div class="row gy-4">
-              <div class="col-12">
-                <article class="project-card featured-project h-100">
-                  <div class="project-proof-grid project-proof-grid-wide mb-3">
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Type</span>
-                      <strong>Flagship ecosystem</strong>
-                    </div>
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Artifacts</span>
-                      <strong>Site, docs, repos</strong>
-                    </div>
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Role</span>
-                      <strong>Platform case study</strong>
-                    </div>
-                  </div>
-                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">Trivox</h3>
-                    <span class="pill pill-outline small">Flagship ecosystem</span>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    Trivox is the ecosystem and product-lab layer behind a big
-                    part of my current work: AI workflow tools, internal
-                    platform thinking, documentation systems, game-tech
-                    products, and public proof surfaces that make the work
-                    inspectable.
-                  </p>
-                  <p class="small text-muted mb-3">
-                    As a case study, it shows how I think about tooling at
-                    ecosystem scale: product lines, architecture boundaries,
-                    docs, releases, and developer ergonomics that hold together
-                    as the work grows.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-3">
-                    <a
-                      href="https://trivox.io"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Website
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                    <a
-                      href="https://docs.trivox.io"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Docs
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                    <a
-                      href="https://github.com/trivox-io"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub org
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">Python</span>
-                    <span class="pill pill-soft">Ecosystem design</span>
-                    <span class="pill pill-soft">AI workflows</span>
-                    <span class="pill pill-soft">Internal tooling</span>
-                    <span class="pill pill-soft">Docs &amp; CI/CD</span>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
-                  <div class="project-proof-grid mb-3">
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Demo</span>
-                      <strong>Playable release</strong>
-                    </div>
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Package</span>
-                      <strong>PyPI artifacts</strong>
-                    </div>
-                  </div>
-                  <header class="mb-2">
-                    <h3 class="h5 mb-0">Mini Arcade</h3>
-                    <p class="small text-muted mb-0">
-                      Python-first game framework and release playground.
+      <main id="top" class="site-main">
+        <section class="hero-section">
+          <div class="container-xxl">
+            <div class="section-frame hero-frame">
+              <div class="row g-4 align-items-center">
+                <div class="col-xl-7">
+                  <div class="hero-copy">
+                    <p class="section-label">// SYSTEMS ENGINEER</p>
+                    <h1 class="hero-title">SANTIAGO RINCÓN</h1>
+                    <p class="hero-role">PYTHON &amp; AI PLATFORM ENGINEER</p>
+                    <p class="hero-statement">
+                      I build the systems behind other systems.
                     </p>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    <strong>mini-arcade-core</strong> and its backends are
-                    where I test engine architecture, reusable gameplay systems,
-                    and the tooling needed to ship small games cleanly.
-                  </p>
-                  <p class="small text-muted mb-3">
-                    Real releases, real constraints, and a strong bias toward
-                    framework quality over throwaway prototypes — game-tooling
-                    ideas turned into working, inspectable software.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small mb-3">
-                    <a
-                      href="https://pypi.org/project/mini-arcade-core/"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      mini-arcade-core (PyPI)
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                    <a
-                      href="https://pypi.org/project/mini-arcade-native-backend/"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      native backend (PyPI)
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                    <a
-                      href="https://alexsc6955.itch.io/dejabounce"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Deja Bounce on itch.io
-                      <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">Python</span>
-                    <span class="pill pill-soft">C++ / SDL2</span>
-                    <span class="pill pill-soft">Game tooling</span>
-                  </div>
-                </article>
-              </div>
+                    <p class="hero-description">
+                      Internal platforms, developer tooling, backend systems,
+                      and workflow infrastructure for technical teams working
+                      across software, AI, and creative production.
+                    </p>
 
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
-                  <div class="project-proof-grid mb-3">
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Mode</span>
-                      <strong>Private R&amp;D</strong>
-                    </div>
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Focus</span>
-                      <strong>Pre-production systems</strong>
+                    <div class="hero-actions">
+                      <a class="signal-button signal-button-primary" href="#work">
+                        View Work
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                      <a
+                        class="signal-button"
+                        href="https://github.com/rincorpes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                      </a>
+                      <a
+                        class="signal-button"
+                        href="https://linkedin.com/in/alexsc6955"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                      </a>
                     </div>
                   </div>
-                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">Ashframe</h3>
-                    <span class="pill pill-outline small">Private R&amp;D</span>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    An AI-driven tooling project aimed at pre-production and
-                    workflow support, turning loose creative process into
-                    something more structured, reusable, and operational.
-                  </p>
-                  <p class="small text-muted mb-3">
-                    Pushes my tools-engineering work further into AI systems
-                    while staying grounded in practical team workflows — not
-                    one-off prompt experiments.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">AI tooling</span>
-                    <span class="pill pill-soft">Pre-production</span>
-                    <span class="pill pill-soft">Workflow design</span>
-                  </div>
-                </article>
-              </div>
+                </div>
 
-              <div class="col-md-6 col-lg-4">
-                <article class="project-card h-100">
-                  <div class="project-proof-grid mb-3">
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Mode</span>
-                      <strong>Private R&amp;D</strong>
+                <div class="col-xl-5">
+                  <div class="hero-blueprint" aria-hidden="true">
+                    <div class="blueprint-ring blueprint-ring-outer"></div>
+                    <div class="blueprint-ring blueprint-ring-mid"></div>
+                    <div class="blueprint-ring blueprint-ring-inner"></div>
+                    <div class="blueprint-crosshair blueprint-crosshair-x"></div>
+                    <div class="blueprint-crosshair blueprint-crosshair-y"></div>
+                    <div class="blueprint-grid"></div>
+                    <div class="blueprint-core">
+                      <span class="hero-mark">R</span>
                     </div>
-                    <div class="project-proof-item">
-                      <span class="project-proof-label">Focus</span>
-                      <strong>LLM workflow tooling</strong>
+                    <div class="blueprint-target"></div>
+                    <div class="blueprint-diagonal blueprint-diagonal-a"></div>
+                    <div class="blueprint-diagonal blueprint-diagonal-b"></div>
+                    <div class="blueprint-coords blueprint-coords-left">
+                      <span>BUILD</span>
+                      <span>EXPERIMENT</span>
+                      <span>SHARE</span>
+                      <span>REPEAT</span>
                     </div>
-                  </div>
-                  <header class="mb-2 d-flex justify-content-between align-items-start gap-3">
-                    <h3 class="h5 mb-0">llmix</h3>
-                    <span class="pill pill-outline small">Private R&amp;D</span>
-                  </header>
-                  <p class="small text-muted mb-2">
-                    An AI workflow experiment focused on packaging LLM
-                    capabilities into cleaner, more repeatable tooling flows for
-                    creative and technical work.
-                  </p>
-                  <p class="small text-muted mb-3">
-                    Reflects the shift from ad-hoc AI use toward
-                    developer-friendly interfaces and systems teams can actually
-                    build on.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <span class="pill pill-soft">LLM workflows</span>
-                    <span class="pill pill-soft">Reusable tooling</span>
-                    <span class="pill pill-soft">AI systems</span>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="notes" class="section-border">
-          <div class="container py-5">
-            <div class="row mb-4">
-              <div class="col-lg-8">
-                <p class="section-kicker mb-2">Writing &amp; Notes</p>
-                <h2 class="section-title mb-3">Devlogs, shipped artifacts, and engineering notes</h2>
-                <p class="text-muted mb-0">
-                  Credibility comes from shipped work, inspectable artifacts,
-                  and documented thinking — not visual noise. Below are the
-                  proof surfaces I point to.
-                </p>
-              </div>
-            </div>
-
-            <div class="row gy-4">
-              <div class="col-md-6 col-lg-4">
-                <article class="proof-card h-100">
-                  <p class="surface-label text-accent mb-2">Engineering case studies</p>
-                  <h3 class="h5 mb-3">Architecture decisions and design teardowns</h3>
-                  <p class="small text-muted mb-3">
-                    Breakdown space for how tools are shaped, why systems are
-                    designed the way they are, and what tradeoffs matter in real
-                    engineering work.
-                  </p>
-                  <ul class="list-clean small mb-3">
-                    <li>Trivox ecosystem architecture and product boundaries</li>
-                    <li>Internal platform design and architecture</li>
-                    <li>Game framework decisions and trade-offs</li>
-                    <li>AI workflow systems for smaller teams</li>
-                  </ul>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <a
-                      href="https://trivox.io"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Explore Trivox
-                    </a>
-                    <a
-                      href="https://github.com/alexsc6955"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Browse GitHub
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <article class="proof-card h-100">
-                  <p class="surface-label text-accent mb-2">Demos &amp; releases</p>
-                  <h3 class="h5 mb-3">Working software over mock momentum</h3>
-                  <p class="small text-muted mb-3">
-                    Playable releases, published packages, and live artifacts
-                    that show the systems are real and already being exercised.
-                  </p>
-                  <ul class="list-clean small mb-3">
-                    <li>Deja Bounce playable demo</li>
-                    <li>mini-arcade-core package</li>
-                    <li>Native backend package</li>
-                  </ul>
-                  <div class="d-flex flex-wrap gap-2 small">
-                    <a
-                      href="https://alexsc6955.itch.io/dejabounce"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Play demo
-                    </a>
-                    <a
-                      href="https://pypi.org/project/mini-arcade-core/"
-                      class="text-accent text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View package
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <article class="proof-card h-100">
-                  <p class="surface-label text-accent mb-2">Engineering notes</p>
-                  <h3 class="h5 mb-3">Writing in progress, grounded in implementation</h3>
-                  <p class="small text-muted mb-3">
-                    Notes and essays around internal platforms, AI-assisted
-                    workflows, game-tooling architecture, and the shape of tools
-                    people actually want to keep using.
-                  </p>
-                  <ul class="list-clean small mb-0">
-                    <li>Internal platform design</li>
-                    <li>Workflow ergonomics for AI systems</li>
-                    <li>Tooling for creative and game teams</li>
-                  </ul>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="stack" class="section-border">
-          <div class="container py-5">
-            <div class="row mb-4">
-              <div class="col-lg-8">
-                <p class="section-kicker mb-2">Core stack</p>
-                <h2 class="section-title mb-2">Tools I reach for to build real systems</h2>
-                <p class="text-muted mb-0">
-                  The technologies I use most when building platforms,
-                  automation, and creative/game-tech systems.
-                </p>
-              </div>
-            </div>
-
-            <div class="row gy-4">
-              <div class="col-md-6 col-lg-4">
-                <div class="stack-card">
-                  <h3 class="h6 text-uppercase text-muted mb-2">Languages</h3>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="pill pill-soft">Python</span>
-                    <span class="pill pill-soft">JavaScript</span>
-                    <span class="pill pill-soft">TypeScript</span>
-                    <span class="pill pill-soft">Node.js</span>
-                    <span class="pill pill-soft">C++</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="stack-card">
-                  <h3 class="h6 text-uppercase text-muted mb-2">
-                    Creative &amp; Engine Context
-                  </h3>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="pill pill-soft">Unreal Engine</span>
-                    <span class="pill pill-soft">Blender</span>
-                    <span class="pill pill-soft">Maya</span>
-                    <span class="pill pill-soft">Houdini</span>
-                    <span class="pill pill-soft">DaVinci Resolve</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="stack-card">
-                  <h3 class="h6 text-uppercase text-muted mb-2">
-                    Backend &amp; Infra
-                  </h3>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="pill pill-soft">FastAPI</span>
-                    <span class="pill pill-soft">Django</span>
-                    <span class="pill pill-soft">Docker</span>
-                    <span class="pill pill-soft">GitHub Actions</span>
-                    <span class="pill pill-soft">MySQL / PostgreSQL</span>
-                    <span class="pill pill-soft">MongoDB</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="stack-card">
-                  <h3 class="h6 text-uppercase text-muted mb-2">
-                    Tooling &amp; Interfaces
-                  </h3>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="pill pill-soft">Qt / PySide</span>
-                    <span class="pill pill-soft">React</span>
-                    <span class="pill pill-soft">Bootstrap</span>
-                    <span class="pill pill-soft">WebSockets</span>
-                    <span class="pill pill-soft">ShotGrid Python API</span>
-                    <span class="pill pill-soft">Perforce Python API</span>
-                    <span class="pill pill-soft">Deadline</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4">
-                <div class="stack-card">
-                  <h3 class="h6 text-uppercase text-muted mb-2">
-                    Leaning harder into
-                  </h3>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="pill pill-soft">AI engineering</span>
-                    <span class="pill pill-soft">Software architecture</span>
-                    <span class="pill pill-soft">Pre-production tooling</span>
-                    <span class="pill pill-soft">Unreal gameplay systems</span>
-                    <span class="pill pill-soft">Developer workflows</span>
+                    <div class="blueprint-coords blueprint-coords-right">
+                      <span>RINCORPES</span>
+                      <span>SYSTEMS</span>
+                      <span>FOR CREATORS</span>
+                    </div>
+                    <div class="blueprint-est">EST. ∞</div>
                   </div>
                 </div>
               </div>
@@ -833,60 +171,203 @@
           </div>
         </section>
 
-        <section id="contact" class="section-border">
-          <div class="container py-5">
-            <div class="row gy-4 align-items-center">
-              <div class="col-lg-7">
-                <p class="section-kicker mb-2">Contact</p>
-                <h2 class="section-title mb-3">
-                  Open to senior engineering roles and technical collaborations.
-                </h2>
-                <p class="text-muted mb-3">
-                  I&apos;m looking for work where systems thinking and product
-                  quality are valued equally — internal platforms, developer
-                  tooling, AI workflow systems, and technical roles where the
-                  goal is making developers faster and operations more reliable.
-                </p>
-                <p class="text-muted mb-4">
-                  If you&apos;re a recruiter, hiring manager, founder, or
-                  collaborator who needs a senior engineer with deep tools
-                  experience and strong product instincts, I&apos;d love to
-                  hear what you&apos;re building.
-                </p>
+        <section id="work" class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <div class="section-heading">
+                <div>
+                  <p class="section-label">// SELECTED WORK</p>
+                  <h2 class="section-title">Technical systems with visible architecture.</h2>
+                </div>
+                <a
+                  class="section-link"
+                  href="https://github.com/rincorpes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View All Work
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div id="selected-work-grid" class="project-grid" aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
 
-                <div class="d-flex flex-wrap gap-3">
-                  <a
-                    href=""
-                    data-contact="email"
-                    class="btn btn-accent d-inline-flex align-items-center gap-2"
-                  >
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Email me
-                  </a>
-
-                  <a
-                    href="https://linkedin.com/in/alexsc6955"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-outline-accent d-inline-flex align-items-center gap-2"
-                  >
-                    <i class="fab fa-linkedin"></i>
-                    Connect on LinkedIn
+        <section class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <div class="row g-4">
+                <div class="col-xl-6">
+                  <p class="section-label">// CREATIVE PRODUCTION ENGINEERING</p>
+                  <h2 class="section-title">Engineering that understands production reality.</h2>
+                  <p class="section-copy">
+                    A big differentiator in my work is shipping software for
+                    teams that sit between code, content, and operations.
+                    Pipelines, tooling, and workflow systems only work when they
+                    respect the constraints of real production environments.
+                  </p>
+                  <p class="section-copy section-copy-muted">
+                    Games, VFX, and creative tech taught me to design for
+                    handoffs, observability, repeatability, and tools people can
+                    actually live with.
+                  </p>
+                  <a class="section-link inline-link" href="#contact">
+                    Explore Pipelines
+                    <i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>
+                <div class="col-xl-6">
+                  <div id="production-tool-grid" class="production-grid"></div>
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="col-lg-5">
-                <div class="card glass-card border-0">
-                  <div class="card-body p-4 small">
-                    <p class="surface-label text-accent mb-3">Best fit for</p>
-                    <ul class="list-clean mb-0">
-                      <li>Senior engineer roles: internal platforms &amp; developer tooling.</li>
-                      <li>Teams building AI-assisted workflow or automation systems.</li>
-                      <li>Creative tech, VFX, or game development engineering.</li>
-                      <li>Founders and collaborators who need product-minded technical execution.</li>
-                    </ul>
+        <section id="systems" class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <div class="row g-4 align-items-stretch">
+                <div class="col-xl-7">
+                  <p class="section-label">// WHAT I BUILD</p>
+                  <h2 class="section-title">Systems designed to reduce friction and scale trust.</h2>
+                  <div id="systems-list" class="systems-list"></div>
+                </div>
+                <div class="col-xl-5">
+                  <div class="systems-diagram" aria-hidden="true">
+                    <span class="systems-axis systems-axis-x"></span>
+                    <span class="systems-axis systems-axis-y"></span>
+                    <span class="systems-orbit systems-orbit-lg"></span>
+                    <span class="systems-orbit systems-orbit-md"></span>
+                    <span class="systems-orbit systems-orbit-sm"></span>
+                    <span class="systems-node systems-node-core"></span>
+                    <span class="systems-node systems-node-a"></span>
+                    <span class="systems-node systems-node-b"></span>
+                    <span class="systems-node systems-node-c"></span>
+                    <div class="systems-index-legend">
+                      <span>01</span>
+                      <span>02</span>
+                      <span>03</span>
+                      <span>04</span>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <div class="section-heading">
+                <div>
+                  <p class="section-label">// PRODUCTION CONTEXT</p>
+                  <h2 class="section-title">Experience across consulting, immersive tech, and delivery.</h2>
+                </div>
+                <a
+                  class="section-link"
+                  href="https://linkedin.com/in/alexsc6955"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Full Experience
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div id="experience-list" class="experience-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <p class="section-label">// OPEN SOURCE / DEVELOPER INFRASTRUCTURE</p>
+              <h2 class="section-title">Reusable libraries, workflow foundations, and engineering building blocks.</h2>
+              <div id="open-source-grid" class="open-source-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="site-section">
+          <div class="container-xxl">
+            <div class="section-frame">
+              <div class="row g-4">
+                <div class="col-xl-7">
+                  <p class="section-label">// ABOUT</p>
+                  <h2 class="section-title">Product-minded engineering. Systems-first thinking.</h2>
+                  <p class="section-copy">
+                    I specialize in the infrastructure behind how technical
+                    teams actually work: internal platforms, developer tooling,
+                    workflow automation, and the glue that turns repeated
+                    friction into reliable systems.
+                  </p>
+                  <p class="section-copy">
+                    My background spans software engineering, creative
+                    production, VFX-adjacent workflows, and interactive
+                    systems. The through-line is consistent: design clear
+                    boundaries, reduce operational drag, and build tools that
+                    stay useful after the first demo.
+                  </p>
+                </div>
+                <div class="col-xl-5">
+                  <div class="about-panel">
+                    <p class="panel-label">Engineering values</p>
+                    <div id="values-list" class="values-list"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="site-section contact-section">
+          <div class="container-xxl">
+            <div class="section-frame contact-frame">
+              <div class="contact-copy">
+                <p class="section-label">// LET&apos;S BUILD SOMETHING MEANINGFUL</p>
+                <h2 class="section-title">Open to interesting problems and serious collaborations.</h2>
+              </div>
+              <div class="contact-grid">
+                <div class="contact-item">
+                  <span class="contact-label">Contact</span>
+                  <a href="" data-contact="email">hello@rincorpes.dev</a>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Location</span>
+                  <span>Bogotá, Colombia (GMT-5)</span>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-label">Profiles</span>
+                  <span class="contact-links">
+                    <a
+                      href="https://github.com/rincorpes"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/alexsc6955"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </span>
+                </div>
+                <div class="contact-item contact-item-action">
+                  <button
+                    type="button"
+                    class="signal-button"
+                    data-copy-email
+                    data-default-label="Copy Email"
+                  >
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copy Email</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -894,24 +375,12 @@
         </section>
       </main>
 
-      <footer class="border-top border-dark py-3 footer">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-muted">
-          <span>&copy; <span id="year"></span> · Santiago Rincón</span>
-          <span>Systems, shipped with intent.</span>
+      <footer class="site-footer">
+        <div class="container-xxl footer-inner">
+          <span>&copy; <span id="year"></span> Rincorpes</span>
+          <span>Systems // Code // Creativity</span>
         </div>
       </footer>
-
-      <button
-        class="watcher"
-        type="button"
-        aria-label="System monitor"
-      >
-        <span class="watcher-core"></span>
-        <span class="watcher-label" id="watcher-label">Idle</span>
-        <span class="watcher-tooltip" id="watcher-tooltip">
-          System monitor: nominal
-        </span>
-      </button>
     </div>
 
     <script type="module" src="/assets/js/index.js"></script>
