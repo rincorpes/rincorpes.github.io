@@ -9,7 +9,7 @@
     "preview": "vite preview --host localhost --port 4173"
   },
   "dependencies": {
-    "@rincorpes/paradoxjs": "file:../../packages/javascript/paradoxjs",
+    "@rincorpes/paradoxjs": "1.0.0",
     "bootstrap": "5.3.8"
   },
   "devDependencies": {

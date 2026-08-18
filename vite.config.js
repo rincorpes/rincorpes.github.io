@@ -1,14 +1,19 @@
 import { defineConfig } from "vite";
+import { existsSync } from "node:fs";
 import { fileURLToPath, URL } from "node:url";
 
+const localParadoxPath = fileURLToPath(
+  new URL("../../packages/javascript/paradoxjs/src/index.ts", import.meta.url)
+);
+
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@rincorpes/paradoxjs": fileURLToPath(
-        new URL("../../packages/javascript/paradoxjs/src/index.ts", import.meta.url)
-      ),
-    },
-  },
+  resolve: existsSync(localParadoxPath)
+    ? {
+        alias: {
+          "@rincorpes/paradoxjs": localParadoxPath,
+        },
+      }
+    : undefined,
   server: {
     host: "localhost",
     port: 4173,
