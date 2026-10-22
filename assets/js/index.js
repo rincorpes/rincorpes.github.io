@@ -24,37 +24,41 @@ const EMAIL_ADDRESS = "rincorpes@gmail.com";
 const selectedWork = [
   {
     index: "01",
-    title: "ENDR",
-    summary: "AI-native research platform for complex document analysis.",
-    note: "PRIVATE R&D",
-    tags: ["Python", "FastAPI", "Postgres"],
+    title: "TATUY",
+    summary:
+      "Python-first 2D game engine focused on explicit architecture, reusable gameplay systems, developer tooling, and AI-assisted development workflows.",
+    href: "https://github.com/rincorpes/tatuy",
+    tags: [
+      "Python",
+      "ECS",
+      "Game Engine",
+      "Developer Tools",
+      "MCP",
+    ],
   },
   {
     index: "02",
-    title: "SABLE",
-    summary: "Secure automation layer for LLM workflows and tool orchestration.",
-    tags: ["Python", "Ray", "Docker"],
+    title: "TORN SDK",
+    summary:
+      "Typed Python SDK for the Torn API with synchronous and asynchronous clients, structured models, and a developer-focused API.",
+    href: "https://github.com/rincorpes/torn-sdk",
+    tags: ["Python", "SDK Design", "APIs", "Async"],
   },
   {
     index: "03",
-    title: "PARADOXJS",
-    summary: "Lightweight JavaScript toolkit for browser-side DOM work and client glue code.",
-    href: "https://github.com/rincorpes/paradoxjs",
-    tags: ["TypeScript", "DOM", "npm"],
+    title: "ENDR",
+    summary:
+      "Experimental AI agent platform combining structured knowledge, tool execution, RAG, runtime communication, and interaction with a persistent Minecraft world.",
+    note: "PRIVATE R&D",
+    tags: ["Python", "FastAPI", "AI Agents", "RAG"],
   },
   {
     index: "04",
-    title: "ONOMASTICON",
-    summary: "Typed implementation registry for graph-shaped naming and pluggable systems.",
-    href: "https://github.com/rincorpes/onomasticon",
-    tags: ["Python", "Neo4j", "APIs"],
-  },
-  {
-    index: "05",
-    title: "RELICT",
-    summary: "Python logging infrastructure focused on preserving context and operational clarity.",
-    href: "https://github.com/rincorpes/relict",
-    tags: ["Python", "Logging", "Infra"],
+    title: "PARADOXJS",
+    summary:
+      "Lightweight browser toolkit for DOM construction, event delegation, routing, and client-side application glue without a large frontend framework.",
+    href: "https://github.com/rincorpes/paradoxjs",
+    tags: ["TypeScript", "DOM", "Developer Tools", "npm"],
   },
 ];
 
@@ -69,76 +73,102 @@ const productionTools = [
 const systems = [
   {
     index: "01",
-    title: "AI Platforms",
-    body: "Scalable systems for LLM operations, orchestration, and intelligent automation that can survive real production use.",
+    title: "Platform Engineering",
+    body:
+      "Internal platforms, reusable infrastructure, runtime systems, and shared foundations that make teams faster without hiding how the system works.",
   },
   {
     index: "02",
     title: "Developer Tools",
-    body: "CLIs, SDKs, and platform helpers that make building faster, safer, and more deliberate for the teams using them.",
+    body:
+      "SDKs, CLIs, automation, debugging tools, development interfaces, and workflows designed with developer experience as a product concern.",
   },
   {
     index: "03",
     title: "Backend Systems",
-    body: "APIs, services, internal infrastructure, and workflow layers designed for clarity, reliability, and long-term maintenance.",
+    body:
+      "Python services, APIs, integrations, orchestration layers, and production infrastructure built around clear boundaries, reliability, and operational visibility.",
   },
   {
     index: "04",
-    title: "Creative Technology",
-    body: "Custom tools and integrations for 3D, real-time, and post-production workflows where technical systems meet content creation.",
+    title: "AI Systems",
+    body:
+      "Agent orchestration, RAG, evaluation workflows, LLM integrations, tool execution, observability, and infrastructure around production AI applications.",
   },
 ];
 
 const experience = [
   {
     title: "Perficient",
-    meta: "Consulting / software engineering",
-    role: "Production delivery for platforms and technical teams",
-    body: "Experience in delivery-oriented environments where software has to balance client realities, maintainability, and operational trust.",
+    meta: "AI / platform engineering",
+    role: "Lead Technical Consultant — Python & AI Systems",
+    body:
+      "Platform and backend engineering for production AI systems, working across agent infrastructure, integrations, evaluation, observability, and developer workflows while balancing experimentation with enterprise reliability and maintainability.",
   },
   {
     title: "ICVR / Craftology",
     meta: "Immersive / creative technology",
-    role: "Technical production across interactive contexts",
-    body: "Work shaped by interactive systems, real-time constraints, and the need to build tools that support creative work without slowing it down.",
+    role: "Software engineering and technical production",
+    body:
+      "Engineering across interactive and creative-production environments where software, real-time systems, content pipelines, and technical workflows meet.",
   },
   {
     title: "K2",
-    meta: "Implementation / systems thinking",
-    role: "Engineering in execution-heavy environments",
-    body: "A strong foundation in turning requirements into dependable delivery, with a bias toward structure, repeatability, and practical outcomes.",
+    meta: "Software engineering / implementation",
+    role: "Systems engineering in execution-heavy environments",
+    body:
+      "Translated operational and business requirements into working software and repeatable technical processes, developing a strong bias toward automation, reusable systems, and practical delivery.",
   },
 ];
 
 const openSource = [
   {
-    title: "Onomasticon",
-    body: "Typed implementation registry work focused on discoverability, extension points, and cleaner boundaries between systems.",
-    href: "https://github.com/rincorpes/onomasticon",
-    tags: ["Python", "Registry", "Architecture"],
+    title: "Tatuy",
+    body:
+      "Python game-engine architecture and developer tooling built around explicit systems, reusable gameplay features, profiling, and backend abstraction.",
+    href: "https://github.com/rincorpes/tatuy",
+    tags: ["Python", "Game Technology", "Architecture"],
   },
   {
-    title: "Relict",
-    body: "Shared logging infrastructure for applications that need consistent operational signals and more intentional debugging surfaces.",
-    href: "https://github.com/rincorpes/relict",
-    tags: ["Python", "Logging", "Observability"],
+    title: "Torn SDK",
+    body:
+      "Typed Python API client with synchronous and asynchronous interfaces designed around a predictable developer experience.",
+    href: "https://github.com/rincorpes/torn-sdk",
+    tags: ["Python", "SDK", "APIs"],
   },
   {
     title: "Rincorpes Workflows",
-    body: "Reusable GitHub Actions building blocks for release automation, CI consistency, and less duplicated workflow plumbing.",
+    body:
+      "Reusable GitHub Actions building blocks for release automation, CI consistency, and reducing duplicated workflow configuration.",
     href: "https://github.com/rincorpes/rincorpes-workflows",
     tags: ["GitHub Actions", "CI/CD", "Automation"],
   },
   {
     title: "ParadoxJS",
-    body: "A small browser-side utility belt for DOM creation, event delegation, routing, and client-side glue code.",
+    body:
+      "Minimal browser-side toolkit for DOM construction, event delegation, routing, and client application utilities.",
     href: "https://github.com/rincorpes/paradoxjs",
-    tags: ["TypeScript", "DOM", "Utilities"],
+    tags: ["TypeScript", "DOM", "npm"],
+  },
+  {
+    title: "Relict",
+    body:
+      "Python logging infrastructure focused on preserving useful operational context and creating clearer debugging surfaces.",
+    href: "https://github.com/rincorpes/relict",
+    tags: ["Python", "Logging", "Observability"],
+  },
+  {
+    title: "Onomasticon",
+    body:
+      "Typed implementation registry exploring discoverability, extension points, and cleaner boundaries between pluggable systems.",
+    href: "https://github.com/rincorpes/onomasticon",
+    tags: ["Python", "Registry", "Architecture"],
   },
 ];
 
 const values = [
   "Build for reuse.",
+  "Prefer explicit architecture over hidden magic.",
   "Design clear boundaries.",
   "Make important systems observable.",
   "Automate recurring friction.",
