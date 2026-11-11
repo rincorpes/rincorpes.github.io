@@ -7,6 +7,15 @@ const localParadoxPath = fileURLToPath(
 );
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL("./index.html", import.meta.url)),
+        portfolio: fileURLToPath(new URL("./portfolio/index.html", import.meta.url)),
+        tatuyCase: fileURLToPath(new URL("./portfolio/tatuy/index.html", import.meta.url)),
+      },
+    },
+  },
   resolve: existsSync(localParadoxPath)
     ? {
         alias: {

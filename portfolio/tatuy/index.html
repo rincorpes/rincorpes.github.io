@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatuy — Why I built a Python game engine | Rincorpes</title>
+    <meta name="description" content="A technical case study of Tatuy: a Python-first 2D game engine with explicit frame phases, scenes, ECS, a render queue and an evolving backend boundary." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/portfolio.css" />
+    <link rel="stylesheet" href="../../assets/css/tatuy-case.css" />
+    <script type="module" src="../../assets/js/portfolio.js"></script>
+  </head>
+  <body class="portfolio-page case-study-page">
+    <a class="portfolio-skip" href="#case-main">Skip to case study</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="portfolio-container">
+          <nav class="portfolio-nav" aria-label="Primary">
+            <a class="brand-lockup" href="../../" aria-label="Rincorpes home">
+              <span class="brand-glyph" aria-hidden="true">//</span>
+              <span class="brand-wordmark">RINCORPES</span>
+            </a>
+            <div class="portfolio-nav-links">
+              <a href="../../">Home</a>
+              <a href="../" aria-current="page">Portfolio</a>
+              <a href="https://github.com/rincorpes/tatuy" target="_blank" rel="noopener noreferrer">Source</a>
+              <a href="../../#contact">Contact</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main id="case-main" class="portfolio-container">
+        <div class="case-breadcrumb"><a href="../">← All projects</a><span aria-hidden="true">/</span><span>Tatuy</span></div>
+        <header class="case-hero">
+          <div class="case-hero-copy">
+            <p class="section-label">// GAME TECHNOLOGY / PUBLIC ALPHA</p>
+            <h1>Tatuy<span class="portfolio-accent">.</span></h1>
+            <p class="case-lede">I wanted to write games in Python and still understand what the engine does.</p>
+            <p>Tatuy is an experimental 2D engine built around scenes, an entity-component system, explicit update phases, and a rendering boundary that does not require game logic to know how pixels reach the screen.</p>
+            <div class="portfolio-intro-actions">
+              <a class="portfolio-action portfolio-action-primary" href="https://github.com/rincorpes/tatuy" target="_blank" rel="noopener noreferrer">Read the code <span aria-hidden="true">↗</span></a>
+              <a class="portfolio-action" href="https://rincorpes.github.io/tatuy/" target="_blank" rel="noopener noreferrer">Tatuy showcase <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="case-disclosure">Source is public. The separately hosted browser showcase is configured, but individual interactions and this portfolio's media are still being verified.</p>
+          </div>
+          <aside class="case-summary" aria-labelledby="case-summary-heading">
+            <p class="portfolio-eyebrow" id="case-summary-heading">// AT A GLANCE</p>
+            <dl>
+              <div><dt>Role</dt><dd>Independent engine project</dd></div>
+              <div><dt>Language</dt><dd>Python</dd></div>
+              <div><dt>Desktop backend</dt><dd>Pygame</dd></div>
+              <div><dt>Core ideas</dt><dd>Scenes · ECS · render pipeline</dd></div>
+              <div><dt>Current stage</dt><dd>Alpha, still evolving</dd></div>
+            </dl>
+          </aside>
+        </header>
+
+        <section class="case-section" aria-labelledby="problem-title">
+          <p class="section-label">// 01 — MOTIVATION</p>
+          <h2 id="problem-title">Make the moving parts visible.</h2>
+          <div class="case-reading">
+            <p>Game development becomes much easier to reason about when you can answer a few ordinary questions: Which system runs first? When does a spawned entity become visible? What does rendering own, and what does the game own?</p>
+            <p>Tatuy is my way of exploring those questions without giving up Python for gameplay. The engine makes frame execution explicit and keeps reusable mechanics separate from individual game rules.</p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="architecture-title">
+          <p class="section-label">// 02 — HOW IT IS ORGANIZED</p>
+          <h2 id="architecture-title">Separate the jobs. Keep the flow readable.</h2>
+          <p class="case-section-intro">The design puts game code at the top, presentation intent in the middle, and platform drawing behind a boundary.</p>
+
+          <div class="case-flow" aria-label="Tatuy architecture from authored game to Pygame backend">
+            <div class="case-flow-step"><span>01</span><strong>Game and scenes</strong><small>Rules, input intent and scene lifecycle</small></div>
+            <div class="case-flow-step"><span>02</span><strong>World and systems</strong><small>Entities, components, resources and behavior</small></div>
+            <div class="case-flow-step"><span>03</span><strong>Frame and render pipelines</strong><small>Ordered phases and semantic drawing</small></div>
+            <div class="case-flow-step"><span>04</span><strong>Backend boundary</strong><small>Pygame today; alternatives are future work</small></div>
+          </div>
+
+          <div class="case-two-column">
+            <article class="case-insight">
+              <p class="portfolio-eyebrow">EXECUTION</p>
+              <h3>An explicit frame lifecycle</h3>
+              <p>Control and simulation stages have defined ordering, with commit points for structural world changes before presentation. That makes frame behavior easier to inspect than a collection of hidden callbacks.</p>
+              <p class="case-source"><a href="https://github.com/rincorpes/tatuy/blob/main/docs/architecture/frame-lifecycle.md" target="_blank" rel="noopener noreferrer">Frame lifecycle documentation ↗</a></p>
+            </article>
+            <article class="case-insight">
+              <p class="portfolio-eyebrow">PRESENTATION</p>
+              <h3>Ask for a drawing, not a backend call</h3>
+              <p>Scenes and features submit semantic operations—shapes, text and textures—to a render queue. The pipeline orders them by layer, depth and insertion sequence before backend execution.</p>
+              <p class="case-source"><a href="https://github.com/rincorpes/tatuy/blob/main/docs/architecture/render-pipeline.md" target="_blank" rel="noopener noreferrer">Render pipeline documentation ↗</a></p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="example-title">
+          <p class="section-label">// 03 — A REAL EXAMPLE</p>
+          <h2 id="example-title">Growing a tree to test the engine.</h2>
+          <div class="case-two-column case-example">
+            <div class="case-reading">
+              <p>The <strong>Procedural Tree</strong> experiment uses a seeded generator to build branch and foliage geometry. Its growth state changes over time, while a separate renderer presents that state through Tatuy's render queue.</p>
+              <p>It is intentionally adjustable: regenerate a seed, restart growth, toggle foliage, pause, or change branch depth. That turns a small visual experiment into a test of input, simulation, and presentation working together.</p>
+              <p class="case-source"><a href="https://github.com/rincorpes/tatuy/tree/main/examples/experiments/005_procedural_tree" target="_blank" rel="noopener noreferrer">Read the Procedural Tree experiment ↗</a></p>
+            </div>
+            <div class="case-example-details">
+              <p class="portfolio-eyebrow">// DEMONSTRATED IN LOCAL SOURCE</p>
+              <dl>
+                <div><dt>Seed</dt><dd>Reproducible generation</dd></div>
+                <div><dt>Growth</dt><dd>Simulation state, independent of drawing</dd></div>
+                <div><dt>Rendering</dt><dd>Queue-based presentation</dd></div>
+                <div><dt>Controls</dt><dd>Regenerate · pause · depth · foliage</dd></div>
+              </dl>
+              <p class="case-disclosure">This is an approved native Tatuy capture, not a browser gameplay screenshot. The image documents the experiment's early growth state.</p>
+            </div>
+          </div>
+          <figure class="case-tree-media">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAYAAACadoJwAAAzcElEQVR4nO3dB5hcVcH44ZOQxNC7gYQSeqiGHjqRoogfTZAu+KkoVUVRREClqKgU/RBFQUVQ/INIld5777333mtIAvk/58Asm83s7uzuzJl7Z97XJ8+S2dmZuXdm4/ndc+7MoBGjF5sSAAAAMhic404AAAAECAAAkJUZEAAAIBsBAgAAZCNAAACAbAQIAACQjQABAACyESAAAEA2AgQAAMhGgAAAANkIEAAAIBsBAgAAZCNAAACAbAQIAACQzZB63dCcc84ezj7r+Kkue+WV18Lpp18Q/vLXU8IMMwwPF1/0z6m+/+GHH4bHH386HPrzo8N99z3ccfkWW3w+bPmlL4RRo+YJb7/9Trj22lvCH/54Unj11dfT94cOHRK223bTsNFG48OIEXOF5194KZx00unhv/+9NH2/2n1VfPs7PwsPPfRYOPe/f+u4bOLESeGZZ54P//73ueH0My6YantuuOG28N29D+647iUX/zO8+NIrYdtt9+zTNlUc8/tDwtixS4VT/31uOPLI4zour9zWnXfeH761637d7ueTTjoqLLzQAlW/t8OO3wknnXhUj4+nt31zzz0P9Pj9m266Y6rL/nL8r8PPDvpteOKJp0NO8803bzjl//0+nHzymeH/jj5hmu9PN9104Z//+G2Yf/6R4dBDjw7/PffSjsu//e2vhjXXWDnMMcds6bVw+BF/Dvff/8g0t1HLtvX2OAZiyTGLhuOP/1X4059PDn/726l1uc3+Pl9xvx1/3GHhxhvvCMf84cReL69YY42Vwq9/tV/45S+PCWedfXFopkbsTwCgYDMgcRD/9a9vE9Zac+Xqdz54cFh44QXCD3/wrY7LvvnN7cP3v7dLGD16vhQas88+a9h448+GP/7h0DDTTDOm6xx4wLfT9RZYYGT41KeGhQUXGBV+vN8e4QtfGN+vxzls2NCw0ELzh332+WbYfLPP9XNru9+mirnmmiMst9yYFFXj110tXbfReno8rSy+FmJ8dLXBBmuluD3ttPPC5lvsEoYOGxoOO+xH6bVWBNde859w6KH79Pnndthh83DG6X9OgRwjd7HFRvfp54/948/TfVf+/Oe0Y9Pls846c9hh+83Dn479RVh88YU7rt/d5QAAvan7CDjOGKy+xhZhrbW3DL/9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gGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAAACBAAAaD1mQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAmu6QrcbW/fbqfZsA1MeQOt0OABQiPKr9ff9Tb6/r/QDQf2ZAACiEesxaCA2A4hMgALSUCRMnTfVVlAAUiwABoGliJFT+1CsWDjnznmkiBIDiECAAFIKZCoD24CR0AJKu51+0ShDsv+nSaVYEgGIwAwLUlbc+BQB6YgYEGDDR0ZrPYbysrLMgccYjznwAUDxmQIAB6zpIbeUPgWvVbev6HHY+Mbxh9ykQANqSAAFgqgjpHB6tEgmtsh0ArUCAAHVT77dTLfLMR7vMhOQavJf1JPHKa6AVXwsAjSJAgLqY6qh5i8VHtwPzFtzO7mKgjDMIuaJGhAD0jQABqFErz/C0aoTkZiYEoHcCBKCPmvXp2rmXfbVahNT7scfb80nrAH0n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AJRUvWdBzKoAkIMAASjxLEi9oqEet1PEGR0AikeAADBg4gOAWgkQgDafBbH0CoCcBAhAG0eIpVcA5CZAAOg3S68A6CsBAtCmsyCWXgHQDAIEoA1ZegVAswgQgDabBTHzAUAzCRCAFpMjMJz7AUB/CRCAgmnk4N7SKwCaTYAAtMlSLEuvACgCAQLQojoHR73iw9IrAAZKgAAUVNEG+0V7PACU05BmPwAAGseyKwCKxgwIQIEVZdahKI8DgPITIAAAQDYCBKDgmj370Oz7B6C1CBCAEmhWBIgPAOpNgAAAANkIEICSyD0bYfYDgEYQIABMQ3wA0CgCBKBEhAEAZSdAAACAbAQIQMk0ehbELAsAjSRAAEpIJABQVgIEgA7CBoBGEyAAJSUWACgjAQJAImgAyEGAAJRYvaJBfACQiwABAACyESAAJTdh4uQB/bzZDwByEiAAbRgilesONF4AoK8ECEAL6EtQiA8AmmlIU+8dgLqrBMbwYVP/E2+2A4AiECAALUpwAFBElmABAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAlNgOq44sxG0AQK0ECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQJQUjusOrKQtwUAPREgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECAAAkI0AAQAAshEgAABANgIEAADIRoAAAADZCBAAACAbAQIAAGQjQAAAgGwECEAJ7bDqyFLcJgB0JUAAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QwaMXqxKaGNLbXcIs1+CAB9ssL07zV0j9363vQNvX0AQrj3zkfadjeYAQEomUYGgvgAoNGGhDbXzvUJlNcKq45syO36NxGARjMDAlBCJ93wbCluEwC6EiAAAEA2AgSgpOo5Y2H2A4BcBAhAidUjHMQHADkJEAAAIJu2/xwQgFaxQx/fGcvMBwDNYAYEoEX0JSjEBwDNYgYEoI1mQ4QHAM0mQAAAgGwswQIAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAgAABAABajxkQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAAJCNAAEAALIRIAAAQDYCBAAAyEaAAAAA2QgQAAAgGwECAABkI0AAAIBsBAgAABBy+f+nSr3MBAGgGwAAAABJRU5ErkJggg==" width="800" height="600" loading="lazy" decoding="async" alt="Early growth of a stylized brown procedural tree, showing its trunk and bare branching limbs before foliage appears.">
+            <figcaption>Early-growth frame from the same native Tatuy visual test. A seeded branch structure grows before the leaves appear.</figcaption>
+          </figure>
+        </section>
+
+        <section class="case-section" aria-labelledby="tradeoffs-title">
+          <p class="section-label">// 04 — TRADEOFFS &amp; LIMITS</p>
+          <h2 id="tradeoffs-title">Optimize when the evidence asks for it.</h2>
+          <div class="case-two-column">
+            <article class="case-insight">
+              <p class="portfolio-eyebrow">WHAT EXISTS</p>
+              <h3>Python engine, Pygame backend, experiments</h3>
+              <p>The codebase has scenes, systems, ECS composition, render operations, reusable features, and example games. The browser showcase has a build pipeline, but deployment configuration is not the same as verifying every playable in a live browser.</p>
+            </article>
+            <article class="case-insight">
+              <p class="portfolio-eyebrow">WHAT IS NOT DONE</p>
+              <h3>No native backend or performance promise</h3>
+              <p>SDL2 and C++ infrastructure remain possible future directions. Tatuy is alpha software, not a completed general-purpose engine. I am using increasingly demanding experiments to find what its abstractions should become.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-outro" aria-labelledby="case-next-title">
+          <p class="section-label">// CONTINUE EXPLORING</p>
+          <h2 id="case-next-title">From engine architecture to something you can play.</h2>
+          <p>The case study now includes a real native capture alongside the source and design documentation. Verified browser gameplay remains a separate review track.</p>
+          <div class="portfolio-intro-actions">
+            <a class="portfolio-action portfolio-action-primary" href="https://github.com/rincorpes/tatuy" target="_blank" rel="noopener noreferrer">Explore Tatuy on GitHub <span aria-hidden="true">↗</span></a>
+            <a class="portfolio-action" href="../">Back to the portfolio <span aria-hidden="true">←</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="portfolio-container portfolio-footer">
+          <span>© <span id="year">2026</span> Rincorpes</span>
+          <span>Curiosity // Tools // Things worth making</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

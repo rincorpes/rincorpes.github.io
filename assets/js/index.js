@@ -26,39 +26,33 @@ const selectedWork = [
     index: "01",
     title: "TATUY",
     summary:
-      "Python-first 2D game engine focused on explicit architecture, reusable gameplay systems, developer tooling, and AI-assisted development workflows.",
-    href: "https://github.com/rincorpes/tatuy",
-    tags: [
-      "Python",
-      "ECS",
-      "Game Engine",
-      "Developer Tools",
-      "MCP",
-    ],
+      "I wanted to make games in Python without treating the engine like a black box. Tatuy is the experimental 2D engine I'm building to explore scenes, gameplay systems, and rendering.",
+    href: "https://rincorpes.github.io/tatuy/",
+    tags: ["Python", "Game Engine", "ECS", "Open Source"],
   },
   {
     index: "02",
-    title: "TORN SDK",
+    title: "STUDIO",
     summary:
-      "Typed Python SDK for the Torn API with synchronous and asynchronous clients, structured models, and a developer-focused API.",
-    href: "https://github.com/rincorpes/torn-sdk",
-    tags: ["Python", "SDK Design", "APIs", "Async"],
+      "I wanted less friction between an idea and a working change. Studio is my private development control plane for tools, checks, and visual feedback.",
+    note: "PRIVATE PROJECT",
+    tags: ["Python", "Developer Tools", "Automation", "MCP"],
   },
   {
     index: "03",
     title: "ENDR",
     summary:
-      "Experimental AI agent platform combining structured knowledge, tool execution, RAG, runtime communication, and interaction with a persistent Minecraft world.",
+      "What would it take for an AI assistant to interact with a Minecraft world? Endr is a private experiment with structured knowledge, agents, and a changing game environment.",
     note: "PRIVATE R&D",
-    tags: ["Python", "FastAPI", "AI Agents", "RAG"],
+    tags: ["Python", "AI Agents", "Minecraft", "Runtime"],
   },
   {
     index: "04",
     title: "PARADOXJS",
     summary:
-      "Lightweight browser toolkit for DOM construction, event delegation, routing, and client-side application glue without a large frontend framework.",
+      "Sometimes I want a few good browser utilities, not an entire framework. ParadoxJS brings together DOM helpers, event delegation, routing, and PubSub.",
     href: "https://github.com/rincorpes/paradoxjs",
-    tags: ["TypeScript", "DOM", "Developer Tools", "npm"],
+    tags: ["JavaScript", "TypeScript", "DOM", "Open Source"],
   },
 ];
 
@@ -75,25 +69,25 @@ const systems = [
     index: "01",
     title: "Platform Engineering",
     body:
-      "Internal platforms, reusable infrastructure, runtime systems, and shared foundations that make teams faster without hiding how the system works.",
+      "I like the bigger picture: how services fit together, where responsibilities belong, and what should stay simple as software grows.",
   },
   {
     index: "02",
     title: "Developer Tools",
     body:
-      "SDKs, CLIs, automation, debugging tools, development interfaces, and workflows designed with developer experience as a product concern.",
+      "The little tools and automations that save someone ten repeated steps. Good developer experience is part of making good software.",
   },
   {
     index: "03",
     title: "Backend Systems",
     body:
-      "Python services, APIs, integrations, orchestration layers, and production infrastructure built around clear boundaries, reliability, and operational visibility.",
+      "APIs, services, and integrations that are easier to reason about when they fail, change, or need to grow.",
   },
   {
     index: "04",
     title: "AI Systems",
     body:
-      "Agent orchestration, RAG, evaluation workflows, LLM integrations, tool execution, observability, and infrastructure around production AI applications.",
+      "The less flashy parts of AI: connecting agents to useful tools and knowledge, checking what they do, and handling real-world constraints.",
   },
 ];
 
@@ -103,21 +97,21 @@ const experience = [
     meta: "AI / platform engineering",
     role: "Lead Technical Consultant — Python & AI Systems",
     body:
-      "Platform and backend engineering for production AI systems, working across agent infrastructure, integrations, evaluation, observability, and developer workflows while balancing experimentation with enterprise reliability and maintainability.",
+      "I work on backend and platform pieces behind AI-driven experiences: connecting services and agents, making behavior easier to evaluate, and helping teams build on reliable foundations.",
   },
   {
     title: "ICVR / Craftology",
     meta: "Immersive / creative technology",
     role: "Software engineering and technical production",
     body:
-      "Engineering across interactive and creative-production environments where software, real-time systems, content pipelines, and technical workflows meet.",
+      "My work in interactive and creative-production environments taught me how much good tools depend on understanding the people and workflows around them.",
   },
   {
     title: "K2",
     meta: "Software engineering / implementation",
     role: "Systems engineering in execution-heavy environments",
     body:
-      "Translated operational and business requirements into working software and repeatable technical processes, developing a strong bias toward automation, reusable systems, and practical delivery.",
+      "Worked on software for operational needs, turning recurring processes into repeatable tools and learning to value clear, practical solutions.",
   },
 ];
 
@@ -125,56 +119,56 @@ const openSource = [
   {
     title: "Tatuy",
     body:
-      "Python game-engine architecture and developer tooling built around explicit systems, reusable gameplay features, profiling, and backend abstraction.",
+      "A Python-first game engine I’m building to understand the machinery behind games, from scene updates to rendering.",
     href: "https://github.com/rincorpes/tatuy",
     tags: ["Python", "Game Technology", "Architecture"],
   },
   {
     title: "Torn SDK",
     body:
-      "Typed Python API client with synchronous and asynchronous interfaces designed around a predictable developer experience.",
+      "A Python client for the Torn API, with typed models and sync/async ways to make requests.",
     href: "https://github.com/rincorpes/torn-sdk",
     tags: ["Python", "SDK", "APIs"],
   },
   {
     title: "Rincorpes Workflows",
     body:
-      "Reusable GitHub Actions building blocks for release automation, CI consistency, and reducing duplicated workflow configuration.",
+      "GitHub Actions I reuse to spend less time copying release and CI workflows between projects.",
     href: "https://github.com/rincorpes/rincorpes-workflows",
     tags: ["GitHub Actions", "CI/CD", "Automation"],
   },
   {
     title: "ParadoxJS",
     body:
-      "Minimal browser-side toolkit for DOM construction, event delegation, routing, and client application utilities.",
+      "Browser utilities for when plain JavaScript needs a little help, but a whole framework feels unnecessary.",
     href: "https://github.com/rincorpes/paradoxjs",
     tags: ["TypeScript", "DOM", "npm"],
   },
   {
     title: "Relict",
     body:
-      "Python logging infrastructure focused on preserving useful operational context and creating clearer debugging surfaces.",
+      "A Python logging library built around the idea that useful context should be easy to find when something breaks.",
     href: "https://github.com/rincorpes/relict",
     tags: ["Python", "Logging", "Observability"],
   },
   {
     title: "Onomasticon",
     body:
-      "Typed implementation registry exploring discoverability, extension points, and cleaner boundaries between pluggable systems.",
+      "A typed implementation registry for software that needs to discover and swap components cleanly.",
     href: "https://github.com/rincorpes/onomasticon",
     tags: ["Python", "Registry", "Architecture"],
   },
 ];
 
 const values = [
-  "Build for reuse.",
-  "Prefer explicit architecture over hidden magic.",
-  "Design clear boundaries.",
-  "Make important systems observable.",
-  "Automate recurring friction.",
-  "Treat developer experience as product design.",
-  "Keep simple things simple.",
-  "Ship. Learn. Refactor.",
+  "Build what helps.",
+  "Make the moving parts understandable.",
+  "Give each piece a clear job.",
+  "Make it possible to see what happened.",
+  "Automate the boring repetitions.",
+  "Care about the person using the tool.",
+  "Don’t complicate what already works.",
+  "Try it. Learn. Improve it.",
 ];
 
 function buildTag(tag) {

@@ -1,0 +1,164 @@
+/* M3.5: // Emergence — browser motion preview with a genuine Tatuy poster. */
+.portfolio-emergence {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3.6rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3.2rem);
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+  border: 1px solid var(--portfolio-stroke);
+  background:
+    radial-gradient(circle at 83% 29%, rgba(200, 78, 12, .14), transparent 45%),
+    linear-gradient(140deg, #15150f, #101413 55%, #0b0d0c);
+  overflow: hidden;
+}
+.portfolio-emergence .section-label { margin-bottom: 1.25rem; }
+.emergence-copy h2 {
+  margin: 0 0 1.4rem;
+  max-width: 630px;
+  font: 700 clamp(2.2rem, 4vw, 4.15rem)/1.05 "Space Grotesk", sans-serif;
+  letter-spacing: -.065em;
+  color: var(--portfolio-ink);
+  text-wrap: balance;
+}
+.emergence-lede {
+  max-width: 490px;
+  margin: 0 0 .8rem;
+  color: var(--portfolio-ink);
+  font: 600 clamp(1.07rem, 1.6vw, 1.3rem)/1.5 "Inter", sans-serif;
+}
+.emergence-copy > p:not(.section-label):not(.emergence-lede) {
+  max-width: 460px;
+  color: var(--text-secondary, #aaa69b);
+  line-height: 1.75;
+}
+.emergence-upnext { font-size: .83rem; }
+.emergence-copy .portfolio-action {
+  margin-top: 1.2rem;
+  align-self: start;
+}
+.emergence-stage {
+  min-width: 0;
+  margin: 0;
+}
+.emergence-art {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  position: relative;
+  border: 1px solid rgba(227, 145, 74, .2);
+  overflow: hidden;
+  background: #0e1212;
+}
+.emergence-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 52%, transparent 18%, rgba(8, 11, 10, .3) 100%);
+}
+.emergence-motion,
+.emergence-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+.emergence-poster { display: none; }
+.emergence-stage figcaption {
+  color: var(--portfolio-muted);
+  padding-top: .85rem;
+  font: .69rem/1.65 "JetBrains Mono", monospace;
+}
+.emergence-motion .emergence-grid {
+  fill: url(#emergence-grid-pattern);
+  opacity: .45;
+}
+.emergence-motion .emergence-mark {
+  stroke: #e65b19;
+  stroke-width: 8;
+  stroke-linecap: round;
+  fill: none;
+  filter: drop-shadow(0 0 9px rgba(230, 91, 25, .28));
+  animation: emergence-mark 8s linear infinite;
+}
+.emergence-motion .emergence-circuit,
+.emergence-motion .emergence-branches {
+  stroke: #b85d26;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.emergence-motion .emergence-circuit {
+  stroke-width: 3;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  animation: emergence-circuit 8s ease-in-out infinite;
+}
+.emergence-motion .emergence-branches {
+  stroke: #947048;
+  stroke-width: 2;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: emergence-branches 8s ease-in-out infinite;
+}
+.emergence-motion .emergence-nodes {
+  fill: #ea8c46;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: emergence-nodes 8s ease-in-out infinite;
+}
+.emergence-motion .emergence-leaves {
+  fill: #729d73;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: emergence-leaves 8s ease-in-out infinite;
+}
+.emergence-motion .emergence-signal {
+  fill: #f9e1b6;
+  filter: drop-shadow(0 0 8px #e65b19);
+  offset-path: path("M 385 330 L 438 292 L 450 250 L 489 219 L 520 187");
+  offset-rotate: 0deg;
+  animation: emergence-signal 8s linear infinite;
+}
+.emergence-motion .emergence-label { fill: #b4784e; font: 14px monospace; letter-spacing: 1.5px; }
+@keyframes emergence-mark {
+  0%, 12%, 100% { opacity: 1; }
+  30%, 85% { opacity: .08; }
+  96% { opacity: 1; }
+}
+@keyframes emergence-circuit {
+  0%, 13% { opacity: 0; stroke-dashoffset: 650; }
+  42%, 84% { opacity: 1; stroke-dashoffset: 0; }
+  97%, 100% { opacity: 0; stroke-dashoffset: 650; }
+}
+@keyframes emergence-branches {
+  0%, 30% { opacity: 0; stroke-dashoffset: 450; }
+  55%, 83% { opacity: 1; stroke-dashoffset: 0; }
+  97%, 100% { opacity: 0; stroke-dashoffset: 450; }
+}
+@keyframes emergence-nodes {
+  0%, 22% { opacity: 0; transform: scale(.2); }
+  45%, 85% { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(.2); }
+}
+@keyframes emergence-leaves {
+  0%, 48% { opacity: 0; transform: scale(.15); }
+  68%, 83% { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(.15); }
+}
+@keyframes emergence-signal {
+  0%, 67% { opacity: 0; offset-distance: 0%; }
+  72% { opacity: 1; }
+  85% { opacity: 1; offset-distance: 100%; }
+  89%, 100% { opacity: 0; offset-distance: 100%; }
+}
+@media (max-width: 940px) {
+  .portfolio-emergence { grid-template-columns: 1fr; }
+  .emergence-copy { max-width: 690px; }
+}
+@media (max-width: 550px) {
+  .portfolio-emergence { padding: 1.25rem; gap: 1.8rem; }
+  .emergence-copy h2 { font-size: clamp(2.15rem, 10vw, 3.2rem); }
+  .emergence-stage figcaption { font-size: .65rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .emergence-motion { display: none; }
+  .emergence-poster { display: block; }
+  .emergence-motion * { animation: none !important; }
+}

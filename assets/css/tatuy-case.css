@@ -1,0 +1,191 @@
+/* Tatuy case study: document-led design, no placeholder screenshot. */
+.case-study-page .site-shell { min-height: 100vh; }
+.case-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: clamp(1.6rem, 4vw, 3rem);
+  color: var(--text-muted);
+  font: 0.72rem "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.case-breadcrumb a { color: var(--portfolio-ink); }
+.case-breadcrumb a:hover { color: var(--accent-bright); }
+.case-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(275px, 0.68fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  padding-block: clamp(3rem, 7vw, 6rem) clamp(4rem, 8vw, 7rem);
+  border-bottom: 1px solid var(--portfolio-stroke);
+}
+.case-hero h1 {
+  margin: 1rem 0 1.65rem;
+  font: 700 clamp(4.5rem, 12vw, 10rem)/0.85 "Space Grotesk", sans-serif;
+  letter-spacing: -0.08em;
+  color: var(--portfolio-ink);
+}
+.case-lede {
+  max-width: 740px;
+  font: 500 clamp(1.35rem, 2.5vw, 2rem)/1.4 "Inter", sans-serif;
+  color: var(--portfolio-ink);
+}
+.case-hero-copy > p:not(.section-label):not(.case-lede):not(.case-disclosure),
+.case-section-intro,
+.case-reading p,
+.case-insight p,
+.case-outro > p:not(.section-label) {
+  max-width: 710px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.83;
+}
+.case-disclosure {
+  max-width: 710px;
+  margin-top: 1.65rem;
+  color: var(--text-muted);
+  font: 0.75rem/1.75 "JetBrains Mono", monospace;
+}
+.case-summary {
+  align-self: center;
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  border: 1px solid var(--portfolio-stroke);
+  background: radial-gradient(circle at 100% 0%, rgba(200, 78, 12, 0.13), transparent 60%), #131512;
+}
+.case-summary dl { margin: 1.6rem 0 0; }
+.case-summary dl > div,
+.case-example-details dl > div {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--portfolio-stroke);
+}
+.case-summary dt,
+.case-example-details dt {
+  color: var(--text-muted);
+  font: 0.7rem/1.5 "JetBrains Mono", monospace;
+}
+.case-summary dd,
+.case-example-details dd {
+  margin: 0;
+  color: var(--portfolio-ink);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.case-section { padding-block: clamp(3rem, 7vw, 5.8rem); border-bottom: 1px solid var(--portfolio-stroke); }
+.case-section h2,
+.case-outro h2 {
+  max-width: 850px;
+  margin: 0 0 1.35rem;
+  color: var(--portfolio-ink);
+  font: 700 clamp(2.2rem, 5vw, 4.6rem)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+.case-reading p + p { margin-top: 1.2rem; }
+.case-reading strong { color: var(--portfolio-ink); }
+.case-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 2.4rem 0;
+}
+.case-flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-height: 190px;
+  padding: clamp(1.15rem, 2vw, 1.8rem);
+  border: 1px solid var(--portfolio-stroke);
+  background: rgba(19, 21, 18, 0.92);
+}
+.case-flow-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -0.62rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: var(--accent-bright);
+  background: #121411;
+  padding: 0.1rem;
+}
+.case-flow-step span {
+  font: 0.72rem "JetBrains Mono", monospace;
+  color: var(--accent-bright);
+}
+.case-flow-step strong {
+  font: 700 clamp(1.05rem, 1.7vw, 1.35rem)/1.22 "Space Grotesk", sans-serif;
+  color: var(--portfolio-ink);
+}
+.case-flow-step small { color: var(--text-secondary); line-height: 1.55; font-size: 0.76rem; }
+.case-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.case-insight,
+.case-example-details {
+  padding: clamp(1.5rem, 3.2vw, 2.5rem);
+  border: 1px solid var(--portfolio-stroke);
+  background: var(--portfolio-panel);
+}
+.case-insight h3 {
+  margin: 1.2rem 0;
+  color: var(--portfolio-ink);
+  font: 700 clamp(1.45rem, 2.3vw, 2.2rem)/1.16 "Space Grotesk", sans-serif;
+  letter-spacing: -0.04em;
+}
+.case-source {
+  margin-top: 1.5rem;
+  font: 0.76rem/1.6 "JetBrains Mono", monospace !important;
+}
+.case-source a {
+  border-bottom: 1px solid var(--accent-bright);
+  color: var(--portfolio-ink);
+  padding-bottom: 0.25rem;
+}
+.case-source a:hover { color: var(--accent-bright); }
+.case-example { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); align-items: start; }
+/* Render only after M2-TAT-01 asset and final caption are explicitly approved. */
+.case-tree-media {
+  margin: 2rem 0 0;
+  padding: clamp(0.75rem, 2vw, 1.4rem);
+  border: 1px solid var(--portfolio-stroke);
+  background: #101511;
+}
+.case-tree-media img {
+  display: block;
+  width: 100%;
+  max-height: 640px;
+  object-fit: contain;
+}
+.case-tree-media figcaption {
+  margin-top: 0.9rem;
+  color: var(--text-secondary);
+  font: 0.76rem/1.7 "JetBrains Mono", monospace;
+}
+.case-example-details dl { margin: 1.4rem 0 0; }
+.case-example-details .case-disclosure { margin-bottom: 0; }
+.case-outro {
+  margin: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 7vw, 6rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid var(--portfolio-stroke);
+  background: linear-gradient(120deg, rgba(200, 78, 12, 0.12), rgba(12, 14, 12, 0.96) 65%);
+}
+@media (max-width: 900px) {
+  .case-hero { grid-template-columns: 1fr; }
+  .case-summary { max-width: 680px; width: 100%; }
+  .case-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-flow-step:nth-child(2)::after { display: none; }
+}
+@media (max-width: 660px) {
+  .case-two-column, .case-example { grid-template-columns: 1fr; }
+  .case-flow { grid-template-columns: 1fr; }
+  .case-flow-step { min-height: auto; }
+  .case-flow-step::after { display: none; }
+  .case-summary dl > div, .case-example-details dl > div { grid-template-columns: 1fr; gap: 0.25rem; }
+}
